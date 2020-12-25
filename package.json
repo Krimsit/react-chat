@@ -1,0 +1,12 @@
+{
+    "name": "react-chat",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/Krimsit/react-chat",
+    "author": "Krimsit",
+    "license": "MIT",
+    "scripts": {
+        "build": "cd react-chat-client && npm i && cd ../react-chat-server && npm i",
+        "start": "cd react-chat-server && yarn start && cd ../react-chat-client && yarn start"
+    }
+}

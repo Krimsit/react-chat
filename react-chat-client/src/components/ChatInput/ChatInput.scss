@@ -1,0 +1,118 @@
+.chat-input {
+    margin: 20px;
+    position: relative;
+
+    & > div:first-of-type {
+        display: flex;
+    }
+
+    &__smile-btn {
+        display: flex;
+        padding: 0 15px;
+        padding-right: 0;
+        align-items: center;
+        border-right: 0;
+    }
+
+    &__emoji-picker {
+        position: absolute;
+        bottom: 50px;
+        z-index: 1;
+        left: 0;
+    }
+
+    &__attachments {
+        margin-top: 20px;
+    }
+
+    &__record-status {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        color: #f56b6b;
+        flex: 1;
+        justify-content: center;
+        i {
+            margin-right: 10px;
+            position: relative;
+            display: inline-block;
+            height: 10px;
+            width: 10px;
+            background-color: #f56b6b;
+            border-radius: 30px;
+            box-shadow: 0 0 5px #f56b6b;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 10px;
+                width: 10px;
+                background-color: rgba(245, 107, 107, 0.5);
+                border-radius: 30px;
+                animation: wave_animation 0.7s ease-in-out infinite;
+                transition: transform 0.15s ease-in-out;
+                transform: scale(1);
+            }
+        }
+    }
+
+    .ant-btn {
+        .recording,
+        .stop {
+            color: #f56b6b;
+            opacity: 1;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-left: 0;
+        margin-left: 20px;
+        &-upload {
+            input {
+                cursor: pointer;
+            }
+            &:hover {
+                button {
+                    .anticon {
+                        opacity: 1;
+                        color: #3674ff;
+                    }
+                }
+            }
+        }
+        &__record-stop {
+            span {
+                color: #f56b6b;
+            }
+        }
+    }
+
+    button {
+        margin-right: 15px;
+    }
+
+    textarea {
+        resize: none;
+        &:focus,
+        &:hover {
+            box-shadow: none;
+            border: 1px solid #d9d9d9;
+        }
+    }
+}
+
+@keyframes wave_animation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
