@@ -14,6 +14,7 @@ const Home = (props) => {
         const {
             location: { pathname },
         } = props
+
         const dialogId = pathname.split("/").pop()
 
         setCurrentDialogId(dialogId)
@@ -38,5 +39,10 @@ const Home = (props) => {
 }
 
 export default withRouter(
-    connect(({ user }) => ({ user: user.data }), dialogsActions)(Home)
+    connect(
+        ({ user }) => ({
+            user: user.data,
+        }),
+        dialogsActions
+    )(Home)
 )

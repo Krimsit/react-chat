@@ -16,10 +16,9 @@ export default (app: express.Application, io: socket.Server) => {
     const MessageController = new MessageCtrl(io)
     const UploadFileController = new UploadCtrl()
 
-    app.use(express.static(__dirname + "/build"))
-
     app.use(cors())
     app.use(bodyParser.json())
+    app.use(express.static(__dirname + "/build"))
     app.use(checkAuth)
     app.use(updateLastSeen)
 
